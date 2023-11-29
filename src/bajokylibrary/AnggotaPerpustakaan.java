@@ -111,4 +111,9 @@ public class AnggotaPerpustakaan {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "AnggotaPerpustakaan{" + "nomorAnggota=" + nomorAnggota + ", nama=" + nama + ", alamat=" + alamat + ", nomor_telepon=" + nomor_telepon + ", email=" + email + ", tanggal_lahir=" + tanggal_lahir + ", tanggal_gabung=" + tanggal_gabung + ", status=" + status + '}';
+    }
 }

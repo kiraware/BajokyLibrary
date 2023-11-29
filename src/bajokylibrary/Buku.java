@@ -89,4 +89,9 @@ public class Buku {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Buku{" + "ISBN=" + ISBN + ", judul=" + judul + ", pengarang=" + pengarang + ", kategori=" + kategori + ", tanggal_terbit=" + tanggal_terbit + ", stok=" + stok + ", status=" + status + '}';
+    }
 }

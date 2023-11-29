@@ -116,6 +116,10 @@ public class Admin {
         return daftarAnggotaPerpustakaan;
     }
 
+    public ArrayList<Buku> getDaftarBuku() {
+        return daftarBuku;
+    }
+
     public int getId() {
         return id;
     }

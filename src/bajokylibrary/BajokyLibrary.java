@@ -62,8 +62,10 @@ public class BajokyLibrary {
                     System.out.println("Pilih operasi:");
                     System.out.println("1. Tambah Anggota");
                     System.out.println("2. Hapus Anggota");
-                    System.out.println("3. Tambah Buku");
-                    System.out.println("4. Hapus Buku");
+                    System.out.println("3. Lihat Anggota");
+                    System.out.println("4. Tambah Buku");
+                    System.out.println("5. Hapus Buku");
+                    System.out.println("6. Lihat Buku");
                     System.out.println("0. Kembali");
                     System.out.print("Masukian Input : ");
                     int choice = scanner.nextInt();
@@ -83,9 +85,9 @@ public class BajokyLibrary {
                             String nomor_telepon = scanner.nextLine();
                             System.out.print("Masukkan Email Anggota : ");
                             String email = scanner.nextLine();
-                            System.out.print("Masukkan Tanggal Lahir Anggota (YYYY-MM-DD) : ");
+                            System.out.print("Masukkan Tanggal Lahir Anggota (YYYY/MM/DD) : ");
                             String tanggal_lahir = scanner.nextLine();
-                            System.out.print("Masukkan Tanggal Gabung Anggota (YYYY-MM-DD) : ");
+                            System.out.print("Masukkan Tanggal Gabung Anggota (YYYY/MM/DD) : ");
                             String tanggal_gabung = scanner.nextLine();
                             System.out.print("Masukkan Status Anggota : ");
                             String status = scanner.nextLine();
@@ -111,6 +113,11 @@ public class BajokyLibrary {
                             System.out.println("\nBerhasil Menghapus Anggota BAJOKY..");
                             break;
                         case 3:
+                            for (AnggotaPerpustakaan anggotaPerpustakaan2 : adm.getDaftarAnggotaPerpustakaan()) {
+                                System.out.println(anggotaPerpustakaan2);
+                            }
+                            break;
+                        case 4:
                             System.out.print("Masukkan ISBN Buku : ");
                             int ISBN = scanner.nextInt();
                             scanner.nextLine();
@@ -138,13 +145,18 @@ public class BajokyLibrary {
                             adm.addBuku(new Buku(ISBN, judul, pengarang, kategori, date6,stok, status2));
                             System.out.println("\nBerhasil Menambahkan Buku BAJOKY..");
                             break;
-                        case 4:
+                        case 5:
                             System.out.print("Masukkan ISBN Buku Yang Akan Dihapus : ");
                             int ISBN2 = scanner.nextInt();
                             scanner.nextLine();
                             Buku buku = adm.cariBuku(ISBN2);
                             adm.removeBuku(buku);
                             System.out.println("Berhasil Menghapus " + buku.getJudul() + "\n");
+                            break;
+                        case 6:
+                            for (Buku buku2 : adm.getDaftarBuku()) {
+                                System.out.println(buku2);
+                            }
                             break;
                         case 0:
                             System.out.println("");
