@@ -35,6 +35,10 @@ public class AnggotaPerpustakaan {
         admin.pinjamBuku(this, buku);
     }
 
+    public void balikinBuku(Admin admin, Buku buku) {
+        admin.balikinBuku(this, buku);
+    }
+
     public Buku cariBuku(Admin admin, int ISBN) {
         return admin.cariBuku(ISBN);
     }

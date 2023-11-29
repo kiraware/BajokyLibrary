@@ -56,17 +56,31 @@ public class Admin {
         daftarTransaksiPeminjaman.add(new TransaksiPeminjaman(id, anggotaPerpustakaan, buku, today, expire));
     }
 
-    public void balikinBuku(TransaksiPeminjaman transaksiPeminjaman) {
+    public TransaksiPeminjaman cariTransaksiPeminjaman(AnggotaPerpustakaan anggotaPerpustakaan, Buku buku) {
+        for (TransaksiPeminjaman transaksiPeminjaman: daftarTransaksiPeminjaman) {
+            if (transaksiPeminjaman.getAnggota_perpustakaan() == anggotaPerpustakaan && transaksiPeminjaman.getBuku() == buku) {
+                return transaksiPeminjaman;
+            }
+        }
+
+        return null;
+    }
+
+    public void balikinBuku(AnggotaPerpustakaan anggotaPerpustakaan, Buku buku) {
         Random rand = new Random();
         Date today = new Date();
 
-        int denda = 0;
-        if (today.getTime() > transaksiPeminjaman.getTanggal_jatuh_tempo().getTime()) {
-            denda = 10;
-        }
+        TransaksiPeminjaman transaksiPeminjaman = cariTransaksiPeminjaman(anggotaPerpustakaan, buku);
 
-        int id = rand.nextInt();
-        daftarTransaksiPengembalian.add(new TransaksiPengembalian(id, transaksiPeminjaman, today, denda));
+        if (transaksiPeminjaman != null) {
+            int denda = 0;
+            if (today.getTime() > transaksiPeminjaman.getTanggal_jatuh_tempo().getTime()) {
+                denda = 10;
+            }
+    
+            int id = rand.nextInt();
+            daftarTransaksiPengembalian.add(new TransaksiPengembalian(id, transaksiPeminjaman, today, denda));
+        }
     }
 
     public Buku cariBuku(int ISBN) {
