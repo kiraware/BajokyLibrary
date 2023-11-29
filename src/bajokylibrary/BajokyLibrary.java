@@ -21,10 +21,11 @@ public class BajokyLibrary {
         daftarAnggota.add(agt2);
         
         adm.addAnggota(123456, "Febri", "Pringsewu", "082263236909", "magiclif33@gmail.com", "2009-25-02", "2023-09-21", "Aktif");
-        adm.addBuku("Cek Toko Sebelah", "Ernest Prakasa", 876543219, true);
-        adm.addBuku(" The Maze Runner", "West Ball", 765432199,true);
-        adm.addBuku("Turn On", "Vemmy Sagita", 322121249, true);
-        //agt1.pinjamBuku("Turn On");
+        adm.addBuku(876543219, "Cek Toko Sebelah", "Ernest Prakasa", "Seni", "2016-02-25", 50, "Tersedia");
+        adm.addBuku(765432199, "The Maze Runner", "West Ball", "Filsafat", "2012-09-11", 40, "Tersedia");
+        adm.addBuku(322121249, "Turn On", "Vemmy Sagita", "Seni", "2019-06-12", 30, "Tersedia");
+        
+        agt1.pinjamBuku("Turn On");
         
         Scanner scanner = new Scanner(System.in);
         
