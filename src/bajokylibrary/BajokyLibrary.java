@@ -173,7 +173,7 @@ public class BajokyLibrary {
                                         String judulKembali = scanner.nextLine();
                                         System.out.print("Masukkan durasi peminjaman: ");
                                         int durasiPengembalian = scanner.nextInt();
-                                        hasil.mengembalikanBuku(judulKembali, durasiPengembalian);
+                                        hasil.balikinBuku(judulKembali, durasiPengembalian);
                                         scanner.nextLine();
                                         break;
                                     case 3:
