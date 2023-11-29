@@ -22,6 +22,7 @@ public class Admin {
     private ArrayList<Buku> daftarBuku = new ArrayList<Buku>();
     private ArrayList<TransaksiPeminjaman> daftarTransaksiPeminjaman = new ArrayList<TransaksiPeminjaman>();
     private ArrayList<TransaksiPengembalian> daftarTransaksiPengembalian = new ArrayList<TransaksiPengembalian>();
+    private ArrayList<Notifikasi> daftarNotifikasi = new ArrayList<Notifikasi>();
 
     public Admin(int id, String nama, String alamat, String nomor_telepon, String email) {
         this.id = id;
@@ -67,12 +68,12 @@ public class Admin {
     }
 
     public void balikinBuku(AnggotaPerpustakaan anggotaPerpustakaan, Buku buku) {
-        Random rand = new Random();
-        Date today = new Date();
-
         TransaksiPeminjaman transaksiPeminjaman = cariTransaksiPeminjaman(anggotaPerpustakaan, buku);
 
         if (transaksiPeminjaman != null) {
+            Random rand = new Random();
+            Date today = new Date();
+
             int denda = 0;
             if (today.getTime() > transaksiPeminjaman.getTanggal_jatuh_tempo().getTime()) {
                 denda = 10;
@@ -91,6 +92,13 @@ public class Admin {
         }
 
         return null;
+    }
+
+    public void notifPengguna(AnggotaPerpustakaan anggotaPerpustakaan, String jenis, String pesan) {
+        Date today = new Date();
+        Random rand = new Random();
+        int id = rand.nextInt();
+        daftarNotifikasi.add(new Notifikasi(id, jenis, today, pesan, anggotaPerpustakaan));
     }
 
     public int getId() {
