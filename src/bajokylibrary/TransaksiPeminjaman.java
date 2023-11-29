@@ -68,6 +68,4 @@ public class TransaksiPeminjaman {
     public void setTanggal_jatuh_tempo(Date tanggal_jatuh_tempo) {
         this.tanggal_jatuh_tempo = tanggal_jatuh_tempo;
     }
-    
-    
 }

@@ -88,6 +88,4 @@ public class Buku {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
-    
 }

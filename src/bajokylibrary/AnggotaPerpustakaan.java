@@ -30,7 +30,15 @@ public class AnggotaPerpustakaan {
         this.tanggal_gabung = tanggal_gabung;
         this.status = status;
     }
-    
+
+    public void pinjamBuku(Admin admin, Buku buku) {
+        admin.pinjamBuku(this, buku);
+    }
+
+    public Buku cariBuku(Admin admin, int ISBN) {
+        return admin.cariBuku(ISBN);
+    }
+
     public boolean equals(AnggotaPerpustakaan other) {
         return nomorAnggota == other.nomorAnggota;
     }

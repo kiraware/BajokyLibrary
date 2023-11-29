@@ -69,6 +69,16 @@ public class Admin {
         daftarTransaksiPengembalian.add(new TransaksiPengembalian(id, transaksiPeminjaman, today, denda));
     }
 
+    public Buku cariBuku(int ISBN) {
+        for (Buku buku: daftarBuku) {
+            if (buku.getISBN() == ISBN) {
+                return buku;
+            }
+        }
+
+        return null;
+    }
+
     public int getId() {
         return id;
     }

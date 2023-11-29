@@ -58,6 +58,4 @@ public class TransaksiPengembalian {
     public void setDenda(int denda) {
         this.denda = denda;
     }
-    
-    
 }
