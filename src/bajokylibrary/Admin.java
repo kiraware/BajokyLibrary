@@ -5,6 +5,8 @@
 package bajokylibrary;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 
 /**
  *
@@ -18,6 +20,8 @@ public class Admin {
     private String email;
     private ArrayList<AnggotaPerpustakaan> daftarAnggotaPerpustakaan = new ArrayList<AnggotaPerpustakaan>();
     private ArrayList<Buku> daftarBuku = new ArrayList<Buku>();
+    private ArrayList<TransaksiPeminjaman> daftarTransaksiPeminjaman = new ArrayList<TransaksiPeminjaman>();
+    private ArrayList<TransaksiPengembalian> daftarTransaksiPengembalian = new ArrayList<TransaksiPengembalian>();
 
     public Admin(int id, String nama, String alamat, String nomor_telepon, String email) {
         this.id = id;
@@ -41,6 +45,15 @@ public class Admin {
 
     public void removeBuku(Buku buku) {
         daftarBuku.remove(daftarBuku.indexOf(buku));
+    }
+
+    public void pinjamBuku(AnggotaPerpustakaan anggotaPerpustakaan, Buku buku) {
+        Random rand = new Random();
+        Date today = new Date();
+        Date expire = new Date(today.getTime() + (7 * 24 * 60 * 60 * 1000));
+
+        int id = rand.nextInt();
+        daftarTransaksiPeminjaman.add(new TransaksiPeminjaman(id, anggotaPerpustakaan, buku, today, expire));
     }
 
     public int getId() {
