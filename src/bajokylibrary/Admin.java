@@ -56,6 +56,19 @@ public class Admin {
         daftarTransaksiPeminjaman.add(new TransaksiPeminjaman(id, anggotaPerpustakaan, buku, today, expire));
     }
 
+    public void balikinBuku(TransaksiPeminjaman transaksiPeminjaman) {
+        Random rand = new Random();
+        Date today = new Date();
+
+        int denda = 0;
+        if (today.getTime() > transaksiPeminjaman.getTanggal_jatuh_tempo().getTime()) {
+            denda = 10;
+        }
+
+        int id = rand.nextInt();
+        daftarTransaksiPengembalian.add(new TransaksiPengembalian(id, transaksiPeminjaman, today, denda));
+    }
+
     public int getId() {
         return id;
     }
