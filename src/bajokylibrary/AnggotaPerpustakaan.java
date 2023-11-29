@@ -30,6 +30,10 @@ public class AnggotaPerpustakaan {
         this.tanggal_gabung = tanggal_gabung;
         this.status = status;
     }
+    
+    public boolean equals(AnggotaPerpustakaan other) {
+        return nomorAnggota == other.nomorAnggota;
+    }
 
     public int getNomorAnggota() {
         return nomorAnggota;
@@ -94,6 +98,4 @@ public class AnggotaPerpustakaan {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
 }

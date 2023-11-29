@@ -24,6 +24,10 @@ public class TransaksiPeminjaman {
         this.tanggal_peminjaman = tanggal_peminjaman;
         this.tanggal_jatuh_tempo = tanggal_jatuh_tempo;
     }
+    
+    public boolean equals(TransaksiPeminjaman other) {
+        return id == other.id;
+    }
 
     public int getId() {
         return id;

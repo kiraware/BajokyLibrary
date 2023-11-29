@@ -24,6 +24,10 @@ public class Notifikasi {
         this.pesan = pesan;
         this.anggota_perpustakaan = anggota_perpustakaan;
     }
+    
+    public boolean equals(Notifikasi other) {
+        return id == other.id;
+    }
 
     public int getId() {
         return id;

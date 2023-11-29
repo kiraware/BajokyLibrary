@@ -4,6 +4,8 @@
  */
 package bajokylibrary;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -14,6 +16,8 @@ public class Admin {
     private String alamat;
     private String nomor_telepon;
     private String email;
+    private ArrayList<AnggotaPerpustakaan> daftarAnggotaPerpustakaan = new ArrayList<AnggotaPerpustakaan>();
+    private ArrayList<Buku> daftarBuku = new ArrayList<Buku>();
 
     public Admin(int id, String nama, String alamat, String nomor_telepon, String email) {
         this.id = id;
@@ -21,6 +25,22 @@ public class Admin {
         this.alamat = alamat;
         this.nomor_telepon = nomor_telepon;
         this.email = email;
+    }
+
+    public void addAnggota(AnggotaPerpustakaan anggotaPerpustakaan) {
+        daftarAnggotaPerpustakaan.add(anggotaPerpustakaan);
+    }
+
+    public void removeAnggota(AnggotaPerpustakaan anggotaPerpustakaan) {
+        daftarAnggotaPerpustakaan.remove(daftarAnggotaPerpustakaan.indexOf(anggotaPerpustakaan));
+    }
+
+    public void addBuku(Buku buku) {
+        daftarBuku.add(buku);
+    }
+
+    public void removeBuku(Buku buku) {
+        daftarBuku.remove(daftarBuku.indexOf(buku));
     }
 
     public int getId() {

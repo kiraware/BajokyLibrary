@@ -28,6 +28,10 @@ public class Buku {
         this.stok = stok;
         this.status = status;
     }
+    
+    public boolean equals(Buku other) {
+        return ISBN == other.ISBN;
+    }
 
     public int getISBN() {
         return ISBN;

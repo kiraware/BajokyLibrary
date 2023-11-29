@@ -22,6 +22,10 @@ public class TransaksiPengembalian {
         this.tanggal_pengembalian = tanggal_pengembalian;
         this.denda = denda;
     }
+    
+    public boolean equals(TransaksiPengembalian other) {
+        return id == other.id;
+    }
 
     public int getId() {
         return id;
