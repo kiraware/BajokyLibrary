@@ -1,9 +1,10 @@
 package bajokylibrary;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -12,6 +13,7 @@ import java.text.DateFormat;
 public class BajokyLibrary {
     public static void main(String[] args) {
         Admin adm = new Admin(1, "Rian", "Palapa", "081278061977", "rasyid123@gmail.com");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd"); 
 
         AnggotaPerpustakaan agt1 = new AnggotaPerpustakaan(1, "Budi", "Kemiling", "0852526272", "helo@email.co",
                 new Date(), new Date(), "Aktif");
@@ -22,10 +24,22 @@ public class BajokyLibrary {
         adm.addAnggota(new AnggotaPerpustakaan(3, "Caroline", "Russia", "92182912", "hi@caroline.me",
                 new Date(), new Date(), "Aktif"));
 
-        Buku buku1 = new Buku(876543219, "Cek Toko Sebelah", "Ernest Prakasa", "Seni", DateFormat.getInstance().parse("2016-02-25"), 50, true);
+        Date date1, date2, date3;
+        try {
+            date1 = dateFormat.parse("2016/02/25");
+            date2 = dateFormat.parse("2012/09/11");
+            date3 = dateFormat.parse("2019/06/12");
+        } catch (ParseException pe) {
+            date1 = new Date();
+            date2 = new Date();
+            date3 = new Date();
+        }
+        
+        Buku buku1 = new Buku(876543219, "Cek Toko Sebelah", "Ernest Prakasa", "Seni", date1, 50, true);
         adm.addBuku(buku1);
-        adm.addBuku(new Buku(765432199, "The Maze Runner", "West Ball", "Filsafat", DateFormat.getInstance().parse("2012-09-11"), 40, true));
-        adm.addBuku(new Buku(322121249, "Turn On", "Vemmy Sagita", "Seni", DateFormat.getInstance().parse("2019-06-12"), 30, true));
+        adm.addBuku(new Buku(765432199, "The Maze Runner", "West Ball", "Filsafat", date2, 40, true));
+        adm.addBuku(new Buku(322121249, "Turn On", "Vemmy Sagita", "Seni", date3, 30, true));
+        
 
         agt1.pinjamBuku(adm, buku1);
 
@@ -75,7 +89,17 @@ public class BajokyLibrary {
                             String tanggal_gabung = scanner.nextLine();
                             System.out.print("Masukkan Status Anggota : ");
                             String status = scanner.nextLine();
-                            adm.addAnggota(new AnggotaPerpustakaan(nomor, nama, alamat, nomor_telepon, email, DateFormat.getInstance().parse(tanggal_lahir), DateFormat.getInstance().parse(tanggal_gabung), status));
+                            
+                            Date date4, date5;
+                            try {
+                                date4 = dateFormat.parse(tanggal_lahir);
+                                date5 = dateFormat.parse(tanggal_gabung);
+                            } catch (ParseException pe) {
+                                date4 = new Date();
+                                date5 = new Date();
+                            }
+
+                            adm.addAnggota(new AnggotaPerpustakaan(nomor, nama, alamat, nomor_telepon, email, date4, date5, status));
                             System.out.println("\nBerhasil Menambahkan Anggota BAJOKY..");
                             break;
                         case 2:
@@ -103,7 +127,15 @@ public class BajokyLibrary {
                             scanner.nextLine();
                             System.out.print("Masukkan Status Ketersediaan Buku : ");
                             boolean status2 = scanner.nextBoolean();
-                            adm.addBuku(new Buku(ISBN, judul, pengarang, kategori, DateFormat.getInstance().parse(tanggal_terbit),stok, status2));
+                            
+                            Date date6;
+                            try {
+                                date6 = dateFormat.parse(tanggal_terbit);
+                            } catch (ParseException pe) {
+                                date6 = new Date();
+                            }
+                            
+                            adm.addBuku(new Buku(ISBN, judul, pengarang, kategori, date6,stok, status2));
                             System.out.println("\nBerhasil Menambahkan Buku BAJOKY..");
                             break;
                         case 4:
