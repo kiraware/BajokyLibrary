@@ -39,6 +39,16 @@ public class Admin {
     public void removeAnggota(AnggotaPerpustakaan anggotaPerpustakaan) {
         daftarAnggotaPerpustakaan.remove(daftarAnggotaPerpustakaan.indexOf(anggotaPerpustakaan));
     }
+    
+    public AnggotaPerpustakaan cariAnggota(int nomorAnggota) {
+        for (AnggotaPerpustakaan anggotaPerpustakaan : daftarAnggotaPerpustakaan) {
+            if (anggotaPerpustakaan.getNomorAnggota() == nomorAnggota) {
+                return anggotaPerpustakaan;
+            }
+        }
+        
+        return null;
+    }
 
     public void addBuku(Buku buku) {
         daftarBuku.add(buku);
@@ -100,6 +110,10 @@ public class Admin {
         Random rand = new Random();
         int id = rand.nextInt();
         daftarNotifikasi.add(new Notifikasi(id, jenis, today, pesan, anggotaPerpustakaan));
+    }
+
+    public ArrayList<AnggotaPerpustakaan> getDaftarAnggotaPerpustakaan() {
+        return daftarAnggotaPerpustakaan;
     }
 
     public int getId() {
