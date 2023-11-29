@@ -15,12 +15,12 @@ public class BajokyLibrary {
         Admin adm = new Admin(1, "Rian");
         TransaksiPeminjaman T1 = new TransaksiPeminjaman();
 
-        AnggotaPerpustakaan agt1 = new AnggotaPerpustakaan(adm,"Joe", 234, "Pesawaran", "Tidak Ada", 0,T1);
-        AnggotaPerpustakaan agt2 = new AnggotaPerpustakaan(adm,"Erling Haaland", 576, "Australia", "Tidak Ada", 0, T1);
+        AnggotaPerpustakaan agt1 = new AnggotaPerpustakaan(adm, 234567, "Joe", "Pesawaran", "085270592534", "joeriansinuraya@gmail.com", "2004-02-25", "2023-01-21", "Aktif");
+        AnggotaPerpustakaan agt2 = new AnggotaPerpustakaan(adm, 576123, "Erling Haaland" ,"Canberra", "081377247264", "briansky13@gmail.com", "2005-02-21", "2023-10-12", "Aktif" );
         daftarAnggota.add(agt1);
         daftarAnggota.add(agt2);
         
-        adm.addAnggota("Scott McTominay", 135, "United Kingdom", "Tidak Ada", 500);
+        adm.addAnggota(123456, "Febri", "Pringsewu", "082263236909", "magiclif33@gmail.com", "2009-25-02", "2023-09-21", "Aktif");
         adm.addBuku("Cek Toko Sebelah", "Ernest Prakasa", 876543219, true);
         adm.addBuku(" The Maze Runner", "West Ball", 765432199,true);
         adm.addBuku("Turn On", "Vemmy Sagita", 322121249, true);
