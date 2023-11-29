@@ -12,7 +12,7 @@ public class BajokyLibrary {
     public static void main(String[] args) {
         
         ArrayList<AnggotaPerpustakaan> daftarAnggota = new ArrayList<>();
-        Admin adm = new Admin(1, "Rian");
+        Admin adm = new Admin(1, "Rian", "Palapa", 081278061977, "rasyid123@gmail.com");
         TransaksiPeminjaman T1 = new TransaksiPeminjaman();
 
         AnggotaPerpustakaan agt1 = new AnggotaPerpustakaan(adm, 234567, "Joe", "Pesawaran", "085270592534", "joeriansinuraya@gmail.com", "2004-02-25", "2023-01-21", "Aktif");
