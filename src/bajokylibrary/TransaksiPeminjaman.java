@@ -17,7 +17,8 @@ public class TransaksiPeminjaman {
     private Date tanggal_peminjaman;
     private Date tanggal_jatuh_tempo;
 
-    public TransaksiPeminjaman(int id, AnggotaPerpustakaan anggota_perpustakaan, Buku buku, Date tanggal_peminjaman, Date tanggal_jatuh_tempo) {
+    public TransaksiPeminjaman(int id, AnggotaPerpustakaan anggota_perpustakaan, Buku buku, Date tanggal_peminjaman,
+            Date tanggal_jatuh_tempo) {
         this.id = id;
         this.anggota_perpustakaan = anggota_perpustakaan;
         this.buku = buku;

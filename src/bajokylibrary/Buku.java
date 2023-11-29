@@ -19,7 +19,8 @@ public class Buku {
     private int stok;
     private boolean status;
 
-    public Buku(int ISBN, String judul, String pengarang, String kategori, Date tanggal_terbit, int stok, boolean status) {
+    public Buku(int ISBN, String judul, String pengarang, String kategori, Date tanggal_terbit, int stok,
+            boolean status) {
         this.ISBN = ISBN;
         this.judul = judul;
         this.pengarang = pengarang;
@@ -28,7 +29,7 @@ public class Buku {
         this.stok = stok;
         this.status = status;
     }
-    
+
     public boolean equals(Buku other) {
         return ISBN == other.ISBN;
     }

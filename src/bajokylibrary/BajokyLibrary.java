@@ -16,5 +16,4 @@ public class BajokyLibrary {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
 }

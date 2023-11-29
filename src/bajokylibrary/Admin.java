@@ -58,8 +58,9 @@ public class Admin {
     }
 
     public TransaksiPeminjaman cariTransaksiPeminjaman(AnggotaPerpustakaan anggotaPerpustakaan, Buku buku) {
-        for (TransaksiPeminjaman transaksiPeminjaman: daftarTransaksiPeminjaman) {
-            if (transaksiPeminjaman.getAnggota_perpustakaan() == anggotaPerpustakaan && transaksiPeminjaman.getBuku() == buku) {
+        for (TransaksiPeminjaman transaksiPeminjaman : daftarTransaksiPeminjaman) {
+            if (transaksiPeminjaman.getAnggota_perpustakaan() == anggotaPerpustakaan
+                    && transaksiPeminjaman.getBuku() == buku) {
                 return transaksiPeminjaman;
             }
         }
@@ -78,14 +79,14 @@ public class Admin {
             if (today.getTime() > transaksiPeminjaman.getTanggal_jatuh_tempo().getTime()) {
                 denda = 10;
             }
-    
+
             int id = rand.nextInt();
             daftarTransaksiPengembalian.add(new TransaksiPengembalian(id, transaksiPeminjaman, today, denda));
         }
     }
 
     public Buku cariBuku(int ISBN) {
-        for (Buku buku: daftarBuku) {
+        for (Buku buku : daftarBuku) {
             if (buku.getISBN() == ISBN) {
                 return buku;
             }

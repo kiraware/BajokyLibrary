@@ -24,7 +24,7 @@ public class Notifikasi {
         this.pesan = pesan;
         this.anggota_perpustakaan = anggota_perpustakaan;
     }
-    
+
     public boolean equals(Notifikasi other) {
         return id == other.id;
     }
@@ -68,6 +68,4 @@ public class Notifikasi {
     public void setAnggota_perpustakaan(AnggotaPerpustakaan anggota_perpustakaan) {
         this.anggota_perpustakaan = anggota_perpustakaan;
     }
-    
-    
 }

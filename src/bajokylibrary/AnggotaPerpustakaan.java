@@ -20,7 +20,8 @@ public class AnggotaPerpustakaan {
     private Date tanggal_gabung;
     private String status;
 
-    public AnggotaPerpustakaan(int nomorAnggota, String nama, String alamat, String nomor_telepon, String email, Date tanggal_lahir, Date tanggal_gabung, String status) {
+    public AnggotaPerpustakaan(int nomorAnggota, String nama, String alamat, String nomor_telepon, String email,
+            Date tanggal_lahir, Date tanggal_gabung, String status) {
         this.nomorAnggota = nomorAnggota;
         this.nama = nama;
         this.alamat = alamat;

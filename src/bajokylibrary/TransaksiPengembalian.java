@@ -16,13 +16,14 @@ public class TransaksiPengembalian {
     private Date tanggal_pengembalian;
     private int denda;
 
-    public TransaksiPengembalian(int id, TransaksiPeminjaman transaksi_peminjaman, Date tanggal_pengembalian, int denda) {
+    public TransaksiPengembalian(int id, TransaksiPeminjaman transaksi_peminjaman, Date tanggal_pengembalian,
+            int denda) {
         this.id = id;
         this.transaksi_peminjaman = transaksi_peminjaman;
         this.tanggal_pengembalian = tanggal_pengembalian;
         this.denda = denda;
     }
-    
+
     public boolean equals(TransaksiPengembalian other) {
         return id == other.id;
     }
